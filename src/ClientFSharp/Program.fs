@@ -18,7 +18,7 @@ let main argv =
     connection.StartAsync() |> Async.AwaitTask |> ignore
 
     let connectionState = connection.State.ToString()
-    printf "SignalR connection state: %s" connectionState
+    printf "SignalR connection state: %s \n" connectionState
 
     let mutable continueLooping = true
     while continueLooping do

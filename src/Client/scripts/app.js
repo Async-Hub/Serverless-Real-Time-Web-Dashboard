@@ -1,14 +1,15 @@
+const signalrHubName = 'message-dispatcher';
 let connection = new signalR.HubConnectionBuilder()
-    .withUrl("http://localhost/api/")
+    .withUrl(azureSignalRConnectionNegotiationUrl + signalrHubName)
     .build();
 
-connection.on("ReceiveMessage", message => {
+connection.on('ReceiveMessage', message => {
     console.log(message);
     htmlLog(message);
 });
 
 connection.start()
-    .then(() => htmlLog("Connected to the Azure SignalR service."))
+    .then(() => htmlLog('Connected to the Azure SignalR service.'))
     .catch(console.error);
 
 let htmlLog = data => document.body.insertAdjacentHTML('beforeend', data + '</br>');

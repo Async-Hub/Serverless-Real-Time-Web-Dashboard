@@ -14,6 +14,8 @@ module RecurringMessageSender =
          log: ILogger) =
             let currentDate = DateTime.Now.ToString()
             let message = "Message from MessageDispatcher: " + currentDate
+            
             printf "F# Timer trigger function executed at: %s" currentDate
+
             let signalrMessage = new SignalRMessage(Target = "ReceiveMessage", Arguments = [|message|])
             signalRMessages.AddAsync(signalrMessage) |> ignore
