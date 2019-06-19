@@ -13,7 +13,7 @@ namespace FunctionAppCSharp
         public void RefreshLiveCurrencyRates(
             [TimerTrigger("*/5 * * * * *")]TimerInfo timerInfo,
             [SignalR(HubName = "CurrencyRates")] IAsyncCollector<SignalRMessage> signalrMessages,
-            Logger log)
+            ILogger log)
         {
             var currentDate = DateTime.Now.ToString(CultureInfo.InvariantCulture);
             var message = "Message from MessageDispatcher: " + currentDate;
