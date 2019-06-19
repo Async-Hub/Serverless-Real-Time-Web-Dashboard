@@ -29,6 +29,4 @@ steps:
   displayName: 'Build solution **\*.sln'
   inputs:
     platform: 'any cpu'
-    configuration: '$(BuildConfiguration)'
-    msbuildArchitecture: x64
   condition: succeededOrFailed()
