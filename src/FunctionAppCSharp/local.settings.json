@@ -1,0 +1,12 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "AzureWebJobsDashboard": "UseDevelopmentStorage=true",
+    "AzureSignalRConnectionString": "Endpoint=https://serverless-signalr.service.signalr.net;AccessKey=xxx;Version=1.0;"
+  },
+  "Host": {
+    "CORS": "http://localhost:63342",
+    "CORSCredentials": true
+  }
+}
